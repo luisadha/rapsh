@@ -1,2 +1,0 @@
-# rapsh
-Rapsh (CLI Game)
