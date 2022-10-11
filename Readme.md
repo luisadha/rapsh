@@ -12,4 +12,7 @@ Kirimi saya e-mail untuk meminta bergabung untuk menjadi kontributor
 
 adharudin14@gmail.com
 
-Teks berbahasa Indonesia silahkan menggunakan translate untuk sementara. terimakasih 
+
+P.S: Please translate to your native language if you don't understand
+This text is in Indonesian
+
