@@ -1,6 +1,6 @@
 # Rapsh GAME (DEMO) 
 
-![[rapsheet_demo_101112.png]]
+![preview](./rapsheet_demo.png)
 ## Sinopsis
 Rapsh maksudnya rapsh-eet ditiru dari mini game di Game terkenal yaitu Need For Speed milik EA games.
 ## Akses awal
