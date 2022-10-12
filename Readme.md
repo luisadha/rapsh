@@ -12,6 +12,25 @@ Kirimi saya e-mail untuk meminta bergabung untuk menjadi kontributor
 
 adharudin14@gmail.com
 
+Install di termux
+
+
+
+pkg up
+
+pkg install git
+
+pkg install mksh
+
+cd ~
+
+git clone https://github.com/luisadha/rapsh.git
+
+cd rapsh 
+
+mksh rapsh.sh
+
+
 
 P.S: Please translate to your native language if you don't understand
 This text is in Indonesian
