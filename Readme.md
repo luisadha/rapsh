@@ -6,30 +6,25 @@ Rapsh maksudnya rapsh-eet ditiru dari mini game di Game terkenal yaitu Need For 
 ## Akses awal
 Game ini masih awal untuk dapat dimainkan, Kurang nya kemampuan saya dalam hal membuat game ini hidup. Tetapi anda dapat menikmati animasi nya yang masih terlihat seperti game walupun setengah jadi.
 
+Install di termux
+
+> pkg install git
+
+> pkg install mksh
+
+> cd ~
+
+> git clone https://github.com/luisadha/rapsh.git
+
+> cd rapsh
+
+> mksh rapsh.sh
+
 Saya butuh kontributor di bagian Core, dan seseorang maniak game NFS yang hafal dengan bagian mini game ini secara keseluruhan.
 
 Kirimi saya e-mail untuk meminta bergabung untuk menjadi kontributor
 
 adharudin14@gmail.com
-
-Install di termux
-
-
-
-pkg up
-
-pkg install git
-
-pkg install mksh
-
-cd ~
-
-git clone https://github.com/luisadha/rapsh.git
-
-cd rapsh 
-
-mksh rapsh.sh
-
 
 
 P.S: Please translate to your native language if you don't understand
