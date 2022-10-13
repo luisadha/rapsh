@@ -42,7 +42,7 @@ function rando()
 {
 digits=10
 
-randd=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
+
 num=$((rand % 10))
 while [ ${#num} -lt $digits ]; do
   rand=$(od -A n -t d -N 1 /dev/urandom |tr -d ' ')
@@ -51,6 +51,7 @@ done
 echo $num
 }
 
+randd=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 rnd2=`head -c4 /dev/urandom| od -An -tu4`;
 rnd=`head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'`;
 
@@ -149,9 +150,9 @@ printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
 COST TO STATE: $(rando)
-CARS IMPOUNDED: $(randd)
+CARS IMPOUNDED: $randd
 CARS MONITORED: $(random 100 1000)          
-BOUNTY: $(rand)             
+BOUNTY: $(rand 6)         
 FINES DUE: $RANDOMM               
 PURSUITS EVADED: $(shuf -i 1-100000 -n 1)        
 BUSTED: $$";
