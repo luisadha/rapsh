@@ -2,10 +2,22 @@
 
 ![preview](./rapsheet_demo.png)
 ## Sinopsis
-Rapsh maksudnya rapsh-eet ditiru dari mini game di Game terkenal yaitu Need For Speed milik EA games.
-## Akses awal
-Game ini masih awal untuk dapat dimainkan, Kurang nya kemampuan saya dalam hal membuat game ini hidup. Tetapi anda dapat menikmati animasi nya yang masih terlihat seperti game walupun setengah jadi.
 
+Rapsh means rapsh(eet) imitated from the mini game in the famous Game, namely Need For Speed ​​belonging to EA games.
+
+### What is Rapsheet?
+
+The Rap Sheet is a record of registered crimes by the Rockport Police Department in Need for Speed: Most Wanted. It summarises all crimes committed by Blacklist racers.
+
+The Rap Sheet shows the player's name, total bounty, cost to state, fines due, confiscated and monitored vehicles, as well as their evaded and busted pursuits.
+
+It is introduced to the player by Mia Townsend after defeating Blacklist racer #14 Taz.
+Quoted by https://nfs.fandom.com/wiki/Rap_Sheet
+
+## Early access
+This game is still early to be played, My lack of ability in terms of making this game alive. But you can enjoy the animation which still looks like a game even though
+
+### Instalation
 Install di termux
 
 > pkg install git
@@ -20,13 +32,11 @@ Install di termux
 
 > mksh rapsh.sh
 
-Saya butuh kontributor di bagian Core, dan seseorang maniak game NFS yang hafal dengan bagian mini game ini secara keseluruhan.
 
-Kirimi saya e-mail untuk meminta bergabung untuk menjadi kontributor
+## Contributor
+Contrib this repo are welcome.
 
-adharudin14@gmail.com
+E-mail: adharudin14@gmail.com
 
-
-P.S: Please translate to your native language if you don't understand
-This text is in Indonesian
+## License
 
