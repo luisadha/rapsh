@@ -149,13 +149,13 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE: $(rando)
+COST TO STATE: $RANDOMM
 CARS IMPOUNDED: $randd
-CARS MONITORED: $(random 100 1000)          
+CARS MONITORED:   $(shuf -i 1000-100000 -n 1)         
 BOUNTY: $(rand 6)         
 FINES DUE: $RANDOMM               
-PURSUITS EVADED: $(shuf -i 1-100000 -n 1)        
-BUSTED: $$";
+PURSUITS EVADED: $(random 100 1000)  
+BUSTED: $(rand 3)";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "MAIN MENU: "
 echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t0) EXIT";
