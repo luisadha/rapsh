@@ -23,6 +23,34 @@ Y='\x1b[1;33m'
 C='\x1b[1;36m'
 D='\x1b[0m'
 
+RANDOMM=$(date +%s%N | cut -b10-19 | sed -e 's/^0*//;s/^$/0/')
+
+rand() {
+  perl -E '$ARGV[0]||=""; $ARGV[0]=int($ARGV[0])||length($ARGV[0]); say join "", int(rand(9)+1)*($ARGV[0]?1:0), map { int(rand(10)) } (0..($ARGV[0]||0)-2)' $1
+}
+
+random() {
+    min="$1"
+    max="$2"
+    
+    range=$((max - min + 1))
+    rand=$((min + (RANDOM % range)))
+    echo "$rand"
+}
+
+function rando()
+{
+digits=10
+
+randd=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
+num=$((rand % 10))
+while [ ${#num} -lt $digits ]; do
+  rand=$(od -A n -t d -N 1 /dev/urandom |tr -d ' ')
+  num="${num}$((rand % 10))"
+done
+echo $num
+}
+
 rnd2=`head -c4 /dev/urandom| od -An -tu4`;
 rnd=`head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'`;
 
@@ -120,12 +148,12 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE: $rnd       
-CARS IMPOUNDED: $$       
-CARS MONITORED: $$             
-BOUNTY: $rnd2                  
-FINES DUE: $$               
-PURSUITS EVADED: $$              
+COST TO STATE: $(rando)
+CARS IMPOUNDED: $(randd)
+CARS MONITORED: $(random 100 1000)          
+BOUNTY: $(rand)             
+FINES DUE: $RANDOMM               
+PURSUITS EVADED: $(shuf -i 1-100000 -n 1)        
 BUSTED: $$";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "MAIN MENU: "
