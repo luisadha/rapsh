@@ -1,7 +1,7 @@
 # Rapsh GAME (DEMO) 
 
 ![image 0](./rapsheet_demo.png)
-![image 1](./Rap_sheet.jpeg)
+![image 1](./Rap_sheet.jpg)
 ![image 2](./imagess.jpeg)
 
 ## Sinopsis
