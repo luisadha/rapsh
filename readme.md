@@ -1,9 +1,8 @@
 # Rapsh GAME (DEMO) 
 
-![image 0](./rapsheet_demo.png)
-![image 1](./Rap_sheet.jpg)
-![image 2](./imagess.jpeg)
-
+![terminal emulator jackpal](./rapsheet_demo.png)
+![termux+styling](./imagesss-01.jpeg)
+![original](./imagess.jpeg)
 ## Sinopsis
 
 Rapsh means rapsh(eet) imitated from the mini game in the famous Game, namely Need For Speed ​​belonging to EA games.
