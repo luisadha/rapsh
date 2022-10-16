@@ -38,7 +38,10 @@ There are two ways of installation in Termux, direct installation or cloning thi
 
  
 2. Direct install with wget
-```wget https://raw.githubusercontent.com/luisadha/rapsh/master/rapsh.sh -P $PREFIX/bin && chmod +x $PREFIX/bin/rapsh.sh```
+
+```
+wget https://raw.githubusercontent.com/luisadha/rapsh/master/rapsh.sh -P $PREFIX/bin && chmod +x $PREFIX/bin/rapsh.sh
+```
 
 ## Contributor
 Contrib this repo are welcome.
