@@ -20,7 +20,7 @@ Quoted by https://nfs.fandom.com/wiki/Rap_Sheet
 This game is still early to be played, My lack of ability in terms of making this game alive. But you can enjoy the animation which still looks like a game even though
 
 ### Instalation
-Install di termux
+ 1. Install on termux via git
 
 > pkg install git
 
@@ -34,6 +34,9 @@ Install di termux
 
 > mksh rapsh.sh
 
+2. Install on termux via wget
+
+``wget https://raw.githubusercontent.com/luisadha/rapsh/master/rapsh.sh -P $PREFIX/bin && chmod +x $PREFIX/bin/rapsh.sh``
 
 ## Contributor
 Contrib this repo are welcome.
