@@ -30,6 +30,8 @@ There are two ways of installation in Termux, direct installation or cloning thi
 
 > cd ~
 
+> rm -rf rapsh 2>/dev/null;
+
 > git clone https://github.com/luisadha/rapsh.git
 
 > cd rapsh
