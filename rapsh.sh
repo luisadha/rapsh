@@ -30,7 +30,7 @@ function thousands() {
 }
 
 
-rand1=$cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1)
+rand1=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1)
 rand2=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 2)
 rand3=$(od -A n -t d -N 1 /dev/urandom)
 rand4=0
