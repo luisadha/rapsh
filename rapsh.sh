@@ -32,13 +32,14 @@ function thousands() {
 
 rand1=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1)
 rand2=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 2)
-rand3=$(od -A n -t d -N 1 /dev/urandom)
+rand3=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 3)
+
 rand4=0
 rand5=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 
-function rand6()
+function randn()
 {
-digits=6
+digits=$1
 
 rand=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 num=$((rand % 10))
@@ -74,6 +75,7 @@ while [ ${#num} -lt $digits ]; do
 done
 echo $num
 }
+
 rand9=$(tr -cd "[:digit:]" < /dev/urandom | head -c 9)
 
 
@@ -176,13 +178,13 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE: $(rand7 | thousands)
-CARS IMPOUNDED: ${rand1}
-CARS MONITORED: ${rand2}
-BOUNTY: $(rand8 | thousands)
-FINES DUE: $(rand6| thousands)             
-PURSUITS EVADED:${rand3}
-BUSTED:\t${rand22}                         ";
+COST TO STATE: $(randn 7 | thousands)
+CARS IMPOUNDED: $(randn 1)
+CARS MONITORED: $(randn 2
+BOUNTY: $(randn 8 | thousands)
+FINES DUE: $(randn 6| thousands)             
+PURSUITS EVADED: $(randn 3)
+BUSTED: $(randn 2)                         ";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "MAIN MENU: "
 echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t0) EXIT";
