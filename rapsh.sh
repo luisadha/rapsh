@@ -29,6 +29,8 @@ function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
 
+rann=$(tr -cd "[:digit:]" < /dev/urandom | head -c 9)
+
 
 RANDOMM=$(date +%s%N | cut -b10-19 | sed -e 's/^0*//;s/^$/0/')
 
@@ -161,7 +163,7 @@ PROFILE: $ALIAS
 COST TO STATE: $(echo ${rnd} | thousands)
 CARS IMPOUNDED: $randd
 CARS MONITORED:   $(shuf -i 1000-100000 -n 1)         
-BOUNTY: $(rand 6)         
+BOUNTY: $(echo ${rann} | thousands)
 FINES DUE: $RANDOMM               
 PURSUITS EVADED: $(random 100 1000)  
 BUSTED: $(rand 3)";
