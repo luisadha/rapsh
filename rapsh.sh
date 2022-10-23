@@ -23,6 +23,13 @@ Y='\x1b[1;33m'
 C='\x1b[1;36m'
 D='\x1b[0m'
 
+
+
+function thousands {
+    sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
+}
+
+
 RANDOMM=$(date +%s%N | cut -b10-19 | sed -e 's/^0*//;s/^$/0/')
 
 rand() {
@@ -53,6 +60,8 @@ echo $num
 
 randd=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 rnd2=`head -c4 /dev/urandom| od -An -tu4`;
+
+# rnd == Outputs a 10-digit random number
 rnd=`head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'`;
 
 casefiles='\e[3;m\rmw1885-Play';
@@ -149,7 +158,7 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE: $RANDOMM
+COST TO STATE: $(echo ${rnd} | thousands)
 CARS IMPOUNDED: $randd
 CARS MONITORED:   $(shuf -i 1000-100000 -n 1)         
 BOUNTY: $(rand 6)         
