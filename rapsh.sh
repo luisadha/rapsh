@@ -166,6 +166,7 @@ printf "You filled some prompt! %$((${COLUMNS:-`tput cols`}-24))s\n" ''
 fi
 
 
+rand22=$rand2
 
 function program() {
 
@@ -175,13 +176,13 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE:\t$(echo ${rand9} | thousands)
-CARS IMPOUNDED:\t$(echo ${rand1})
-CARS MONITORED:\t${rand2}
-BOUNTY:\t$(echo ${ran10} | thousands)
-FINES DUE:\t$(echo ${rand4} | thousands)             
+COST TO STATE: $(rand7 | thousands)
+CARS IMPOUNDED: ${rand1}
+CARS MONITORED: ${rand2}
+BOUNTY: $(rand8 | thousands)
+FINES DUE: $(rand6| thousands)             
 PURSUITS EVADED:${rand3}
-BUSTED:\t${rand2}                         ";
+BUSTED:\t${rand22}                         ";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "MAIN MENU: "
 echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t0) EXIT";
