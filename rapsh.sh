@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# rapsh_nfsmw v1.0.1-alpha_ui/cli_version_(build login3 v2.4) copyright (c) 2019 - 2021, Luis Adha. <adharudin14@gmail>
+# rapsh_nfsmw v1.2_beta_(build login3 v2.4) copyright (c) 2019 - 2021, Luis Adha. <adharudin14@gmail>
 # GUNAKAN HANYA TERMINAL EMULATOR DARI JACK PALEVICH AGAR BEKERJA
 # Semua Teks, nama tokoh karakter, tempat, nama organsasi kepolisian adalah fiksi milik Need For Speed? 
 
