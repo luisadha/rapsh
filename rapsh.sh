@@ -25,7 +25,7 @@ D='\x1b[0m'
 
 
 
-function thousands {
+function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
 
