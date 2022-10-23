@@ -180,7 +180,7 @@ echo -e "\e[3;m\r
 PROFILE: $ALIAS               
 COST TO STATE: $(randn 7 | thousands)
 CARS IMPOUNDED: $(randn 1)
-CARS MONITORED: $(randn 2
+CARS MONITORED: $(randn 2)
 BOUNTY: $(randn 8 | thousands)
 FINES DUE: $(randn 6| thousands)             
 PURSUITS EVADED: $(randn 3)
