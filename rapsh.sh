@@ -29,29 +29,18 @@ function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
 
-rann=$(tr -cd "[:digit:]" < /dev/urandom | head -c 9)
 
+rand1=$cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1)
+rand2=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 2)
+rand3=$(od -A n -t d -N 1 /dev/urandom)
+rand4=0
+rand5=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 
-RANDOMM=$(date +%s%N | cut -b10-19 | sed -e 's/^0*//;s/^$/0/')
-
-rand() {
-  perl -E '$ARGV[0]||=""; $ARGV[0]=int($ARGV[0])||length($ARGV[0]); say join "", int(rand(9)+1)*($ARGV[0]?1:0), map { int(rand(10)) } (0..($ARGV[0]||0)-2)' $1
-}
-
-random() {
-    min="$1"
-    max="$2"
-    
-    range=$((max - min + 1))
-    rand=$((min + (RANDOM % range)))
-    echo "$rand"
-}
-
-function rando()
+function rand6()
 {
-digits=10
+digits=6
 
-
+rand=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
 num=$((rand % 10))
 while [ ${#num} -lt $digits ]; do
   rand=$(od -A n -t d -N 1 /dev/urandom |tr -d ' ')
@@ -60,11 +49,37 @@ done
 echo $num
 }
 
-randd=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
-rnd2=`head -c4 /dev/urandom| od -An -tu4`;
+function rand7()
+{
+digits=7
 
-# rnd == Outputs a 10-digit random number
-rnd=`head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'`;
+rand=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
+num=$((rand % 10))
+while [ ${#num} -lt $digits ]; do
+  rand=$(od -A n -t d -N 1 /dev/urandom |tr -d ' ')
+  num="${num}$((rand % 10))"
+done
+echo $num
+}
+
+function rand8()
+{
+digits=8
+
+rand=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
+num=$((rand % 10))
+while [ ${#num} -lt $digits ]; do
+  rand=$(od -A n -t d -N 1 /dev/urandom |tr -d ' ')
+  num="${num}$((rand % 10))"
+done
+echo $num
+}
+rand9=$(tr -cd "[:digit:]" < /dev/urandom | head -c 9)
+
+
+
+# rand10 == Outputs a 10-digit random number
+rand10=`head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'`;
 
 casefiles='\e[3;m\rmw1885-Play';
 # SETMYCOLOR="\033[42;1;37m\e[K\e[0m"
@@ -160,13 +175,13 @@ echo -e "\e[3;m\r\t\nRAP SHEET\t|\t$RPD2\t|\t$casefiles";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "\e[3;m\r
 PROFILE: $ALIAS               
-COST TO STATE: $(echo ${rnd} | thousands)
-CARS IMPOUNDED: $randd
-CARS MONITORED:   $(shuf -i 1000-100000 -n 1)         
-BOUNTY: $(echo ${rann} | thousands)
-FINES DUE: $RANDOMM               
-PURSUITS EVADED: $(random 100 1000)  
-BUSTED: $(rand 3)";
+COST TO STATE: $(echo ${rand7} | thousands)
+CARS IMPOUNDED: $(echo ${rand1})
+CARS MONITORED:  ${rand2}
+BOUNTY: $(echo ${ran8} | thousands)
+FINES DUE: $(echo ${rand6} | thousands)             
+PURSUITS EVADED: ${rand3}
+BUSTED: ${rand2}                         ";
 printf %"$COLUMNS"s |tr " " "_"
 echo -e "MAIN MENU: "
 echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t0) EXIT";
