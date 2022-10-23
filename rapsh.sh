@@ -237,7 +237,7 @@ case $main in
 dir="`readlink -f $(pwd)`"
 
 
-  echo -e "{\"FIRSTNAME\": \"${NAME}\", \"LASTNAME\": \"${LASTNAME}\", \"ALIAS\": \"${ALIAS}\", \"COST\ TO\ STATE\":\"   \"$(randn 7 | thousands)\", \"CARS\ IMPOUNDED\":\"  \"$(randn 1 | thousands )\", \"CARS\ MONITORED\":\"   \"$(randn 2 | thousands)\", "BOUNTY\":\"   \"$(randn 8 | thousands )\", \"FINES\ DUE\": \"$(randn 6 | thousands)\", \"PERSUIT_EVADED\": \"$(randn 7 | thousands )\", \"BUSTED\": \"$(randn 2 | thousands )\"}" > $dir/"${ALIAS}_PROFILE-rapsh.js"
+  echo -e "{\"FIRSTNAME\": \"${NAME}\", \"LASTNAME\": \"${LASTNAME}\", \"ALIAS\": \"${ALIAS}\", \"COST\ TO\ STATE\":\"   \"$(randn 7 | thousands)\", \"CARS\ IMPOUNDED\":\"  \"$(randn 1 | thousands )\", \"CARS\ MONITORED\":\"   \"$(randn 2 | thousands)\", \"BOUNTY\":\"   \"$(randn 8 | thousands )\", \"FINES\ DUE\": \"$(randn 6 | thousands)\", \"PERSUIT_EVADED\": \"$(randn 7 | thousands )\", \"BUSTED\": \"$(randn 2 | thousands )\"}" > $dir/"${ALIAS}_PROFILE-rapsh.js"
 
 sleep 2.0
 echo -e 'Save Successfull!';
