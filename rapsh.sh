@@ -24,7 +24,7 @@ C='\x1b[1;36m'
 D='\x1b[0m'
 
 
-
+# https://ideone.org/XIo0FC
 function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
