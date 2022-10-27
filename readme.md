@@ -50,5 +50,8 @@ Contrib this repo are welcome.
 
 E-mail: adharudin14@gmail.com
 
+## Thanks to:
+ideone.org for snippet code
+
 ## License
 
