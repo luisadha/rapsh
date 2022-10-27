@@ -1,4 +1,4 @@
-# Rapsh GAME (DEMO) 
+# Rapsh The CLI Game (Under development) v1.2-beta 
 
 ![terminal emulator jackpal](./rapsheet_demo.png)
 ![termux+styling](./imagesss-01.jpeg)
