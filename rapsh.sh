@@ -1,17 +1,20 @@
 #!/system/bin/sh
 
 # rapsh_nfsmw v1.2_beta_(build login3 v2.4) copyright (c) 2019 - 2021, Luis Adha. <adharudin14@gmail>
-# GUNAKAN HANYA TERMINAL EMULATOR DARI JACK PALEVICH AGAR BEKERJA
-# Semua Teks, nama tokoh karakter, tempat, nama organsasi kepolisian adalah fiksi milik Need For Speed? 
+# USE ONLY TERMINAL EMULATOR FROM JACK PALEVICH TO WORK OR TERMUX
 
-# All Text, character names, places, police organization names are fictional from Need For Speed?
+# All Text, character names, places, police organization names are fictional from Need For Speed.
 
 # SIGN IN: CROSS
 # PASSWORD: XXXXXXX
-# 705pm090122 new line paskan ke layar
+
+#log:
+# 705pm090122 new line fit to screen
 # new feature export with js
 # fix major bugs
 # new algorithm
+# - number with separate coma
+# - export feature improvement
 
 
 
@@ -24,7 +27,7 @@ C='\x1b[1;36m'
 D='\x1b[0m'
 
 
-# https://ideone.org/XIo0FC
+# https://ideone.com/XIo0FC
 function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
@@ -237,7 +240,7 @@ case $main in
 dir="`readlink -f $(pwd)`"
 
 
-  echo -e "{\"FIRSTNAME\": \"${NAME}\", \"LASTNAME\": \"${LASTNAME}\", \"ALIAS\": \"${ALIAS}\", \"COST\ TO\ STATE\":\"   \"$(randn 7 | thousands)\", \"CARS\ IMPOUNDED\":\"  \"$(randn 1 | thousands )\", \"CARS\ MONITORED\":\"   \"$(randn 2 | thousands)\", \"BOUNTY\":\"   \"$(randn 8 | thousands )\", \"FINES\ DUE\": \"$(randn 6 | thousands)\", \"PERSUIT_EVADED\": \"$(randn 7 | thousands )\", \"BUSTED\": \"$(randn 2 | thousands )\"}" > $dir/"${ALIAS}_PROFILE-rapsh.js"
+  echo -e "{\"FIRSTNAME\": \"${NAME}\", \"LASTNAME\": \"${LASTNAME}\", \"ALIAS\": \"${ALIAS}\", \"COST TO STATE\":\"   \"$(randn 7 | thousands)\", \"CARS IMPOUNDED\":\"  \"$(randn 1 | thousands )\", \"CARS MONITORED\":\"   \"$(randn 2 | thousands)\", \"BOUNTY\":\"   \"$(randn 8 | thousands )\", \"FINES DUE\": \"$(randn 6 | thousands)\", \"PERSUIT_EVADED\": \"$(randn 7 | thousands )\", \"BUSTED\": \"$(randn 2 | thousands )\"}" > $dir/"${ALIAS}_PROFILE-rapsh.js"
 
 sleep 2.0
 echo -e 'Save Successfull!';
