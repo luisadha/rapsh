@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# rapsh_nfsmw v2.4(build login3) copyright (c) 2019, Luis <adharudin14@gmail>
+# rapsh_nfsmw v1.0-alpha (build login3 v2.4) copyright (c) 2019, Luis <adharudin14@gmail>
 
 # SIGN IN: CROSS
 # PASSWORD: XXXXXXX
