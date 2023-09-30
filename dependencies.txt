@@ -1,0 +1,7 @@
+- COLUMNS = 70
+- LINES = 13
+- bash
+- python3
+  = tabulate python module
+- tput
+

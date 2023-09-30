@@ -1,0 +1,26 @@
+# BIG UPDATE
+
+- Imporve signin Animations
+- Improve Searching database Animations
+- Improve CLI/UX
+- Impove Table
+- Support Color
+- Themes (Experimental)
+- Add existing alias already (Experimental)
+- Add logo Police
+- Rebuild Structure
+- Impove random algorithm
+- Static data
+
+# Soon/PR
+
+# please update Save current progress to json
+# please add more category section
+# please update themes fetures
+# please generate random ID
+# please add feature vehicles input
+
+
+
+
+

@@ -3,7 +3,7 @@ from tabulate import tabulate
 
 # Data dari file "data.sh"
 data = []
-with open('data.sh', 'r') as file:
+with open('current_alias.data', 'r') as file:
     lines = file.readlines()
     for line in lines:
         key, value = map(str.strip, line.strip().split(':'))

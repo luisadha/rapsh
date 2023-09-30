@@ -4,14 +4,27 @@ source ~/rapsh/lib/libcolor-rapsh.sh
 function thousands() {
     sed -re ' :restart ; s/([0-9])([0-9]{3})($|[^0-9])/\1,\2\3/ ; t restart '
 }
-rand1=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1)
-rand2=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 2)
-rand3=$(cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 3)
+generateRandomIntegerBetween0And9() {
+cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | head --bytes 1
+}
+generateRandomIntegerBetween10And99() {
+  cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 2
+}
+
+generateRandomIntegerBut3Digit() {
+  cat /dev/urandom | tr -dc '0-9' | fold -w 256 | head -n 1 | sed -e 's/^0*//' | head --bytes 3
+}
 
 rand4=0
 
-rand5=$(od -A n -t d -N 2 /dev/urandom |tr -d ' ')
+generateRandomIntegerBut5Digit() {
 
+od -A n -t d -N 2 /dev/urandom |tr -d ' '
+}
+
+generateRandomIntegerBetween1And9() {
+    head -c10 /dev/urandom | md5sum | tr -d [a-z] | tr -d 0 | cut -c1
+}
 generateNonZeroLeading6Digit() {
 digits=6
 num=""
@@ -28,8 +41,6 @@ num="${num}$digit"
 
  echo $num
 }
-
-
 generateNonZeroLeading8Digit() {
 
   digits=8

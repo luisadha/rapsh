@@ -21,8 +21,8 @@
 echo
 _Column_Database="$(echo -e "$COLUMNS - 19" | bc )"
 echo -e ${On_IGreen}${BIBlack} "  VEHICLE DATABASE$(printf %"$_Column_Database"s |tr " " " ")$Color_Off";
-echo -e ${BIWhite}"   ${word[0]}: " # PUTIH
-echo -e "   ${word[1]}: "${Color_Off} # PUTIH
+echo -e ${BIWhite}"   ${word[0]}: $(cat ./current_alias.data | awk '{print $2}' | head -n 1)" # PUTIH
+echo -e "   ${word[1]}: $(cat ./current_alias.data | awk '{print $2}' | head -n5 | tail -n1)"${Color_Off} # PUTIH
 echo -e ${BIGreen}"   PREFERRED ${word[3]}: " #HIJAU
 echo -e "   RECENT ${word[3]}: "${Color_Off} #HIJAU
 echo -e ${BIGreen}"$(printf %"$COLUMNS"s |tr " " "-")";
