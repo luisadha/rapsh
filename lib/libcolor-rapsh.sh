@@ -1,15 +1,21 @@
 PREFIX='\e[3;m'
-DELAY=1 # Number of seconds to display results
-RPD="ROCKPORT POLICE DEPARTEMENT";
-SETMYCOLOR="\e[3;m\r" #invert color
+DELAY=("0.3" "0.5" "1.3" "1.5" "1.7")
+RPD="R O C K P O R T  P O L I C E  D E P A R T E M E N T";
+SETMYCOLOR="${On_IGreen}${BIBlack}"
 THEME_DOT="."
 RPD2="ROCKPORT P.D."
-ITALIC='\e[3;m\r'
-
+ITALIC='\e[3;m\r' 
+SV="${e93}SIGIN IN:${e92}"
+PV="${e93}PASSWORD:${e92}"
 RAPSH_DIR="$HOME/rapsh/"
 # Reset
 Color_Off='\033[0m'       # Text Reset
 
+e39="\e[39m"
+e91="\e[91m"
+e93="\e[93m"
+e92="\e[92m"
+e34="\e[34m"
 # Regular Colors
 Black='\033[0;30m'        # Black
 Red='\033[0;31m'          # Red
@@ -102,7 +108,7 @@ draw() {
 
  local  padding_length=$((($terminal_width - $text_length - 4) / 2))
 
-  echo -e "$(printf "%${padding_length}s")$wellcome_str$(printf "%${padding_length}s")"
+  echo -n -e "$(printf "%${padding_length}s")$wellcome_str$(printf "%${padding_length}s")"
 }
 
 local star=" "
@@ -110,7 +116,7 @@ local star=" "
 local abc=$(echo "${star}$(draw)" | wc -L)
 local cba=$((COLUMNS - abc))
 
-echo -e "${star}$(draw)$(printf %"$cba"s "$star")"
+echo -n -e "${star}$(draw)$(printf %"$cba"s "$star")"
 }
 function getAsciiShieldLogos() {
 public_Banner ".....          ....." #1
@@ -131,12 +137,15 @@ public_Banner ".............................................." #15
 public_Banner ".........................................." #16
 public_Banner "...................................." #17
 public_Banner "........................" #18
-public_Banner "......" #19
-public_Banner " " #20
+public_Banner "......." #19
+local quote="'"
+public_Banner "$quote" #20
+public_Banner " " #21
 }
 
 function public_Footer() {
- echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t7) SAVE CURRENT PROGRESS\t0) EXIT"; 
+ echo -e "1) SUMMARY\t2) VEHICLE DATABASE\t3) INFRACTIONS\t4) COST TO STATE\t5) TOP 5 PURSUITS\t6) RANGKINGS\t7) SAVE CURRENT STAT\t0) EXIT"; 
+
 }
 function public_Header() {
 local arg="$2"
@@ -176,14 +185,12 @@ printf " Enter selection [0-4] > %$((${COLUMNS:-`tput cols`}-25))s\n" ''
 function _menu_theme_dot() {
 
 newLine;                                                   #echo -e "
-colm=$(python3 ~/rapsh/theme/dot_theme.py | column  -ts "+|" -L | sed "s/ /${THEME_DOT}/g" | wc -L)
+colm=$(python3 ~/rapsh/theme/dot_theme.py | column  -ts "+|=" -L | sed "s/ /${THEME_DOT}/g" | sed "s/=/-/g" | wc -L)
 export COLUMNS=$colm
 echo
-printf %"$colm"s | tr " " "-"
 newLine
-python3 ~/rapsh/theme/dot_theme.py | column  -ts "+|" -L | sed "s/ /${THEME_DOT}/g"
+python3 ~/rapsh/theme/dangerline_theme.py | column  -ts "+|" -L | sed "s/ /${THEME_DOT}/g" |sed "s/=/-/g" |sed "s/--//g" | sed "s/-//g"
 
-printf %"$colm"s | tr " " "-"
 newLine
 }
 

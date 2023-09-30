@@ -1,0 +1,12 @@
+source ./lib/libanimation.sh
+source ./lib/libcolor-rapsh.sh
+
+
+NAME="ADHA"
+LASTNAME="RUDIN"
+
+clear
+afterSignInAnimation
+#signInAnimation "SIGN" 15
+
+

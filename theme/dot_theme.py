@@ -19,7 +19,7 @@ data = []
 
 # Membaca data dari file "data.sh" dan memasukkannya ke dalam tabel
 
-with open('data.sh', 'r') as file:
+with open('current_alias.data', 'r') as file:
     lines = file.readlines()
     for line in lines:
         # Memisahkan Nama dan Nilai dari setiap baris berdasarkan tanda ":" (atau sesuaikan dengan format file "data.sh" Anda)
