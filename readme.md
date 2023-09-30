@@ -1,4 +1,4 @@
-# Rapsh The CLI Game (Under development) v1.2-beta 
+6# Rapsh The CLI Game (Under development) v1.2-beta 
 
 ![terminal emulator jackpal](./rapsheet_demo.png)
 ![termux+styling](./imagesss-01.jpeg)
@@ -50,8 +50,13 @@ Contrib this repo are welcome.
 
 E-mail: adharudin14@gmail.com
 
+## Maintener
+
+Luis Adha
+
 ## Thanks to:
-ideone.com for snippet code
+- ideone.com for snippet code
+- alan for idea add logo to this game
 
 ## License
 
