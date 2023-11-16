@@ -26,8 +26,6 @@ There are two ways of installation in Termux, direct installation or cloning thi
 
 > pkg install git
 
-> pkg install mksh
-
 > cd ~
 
 > rm -rf rapsh 2>/dev/null;
@@ -36,14 +34,9 @@ There are two ways of installation in Termux, direct installation or cloning thi
 
 > cd rapsh
 
-> mksh rapsh.sh
+> bash rapsh.sh
 
- 
-2. Direct install with wget
 
-```
-wget https://raw.githubusercontent.com/luisadha/rapsh/master/rapsh.sh -P $PREFIX/bin && chmod +x $PREFIX/bin/rapsh.sh
-```
 
 ## Contributor
 Contrib this repo are welcome.
