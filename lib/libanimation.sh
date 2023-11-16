@@ -198,11 +198,11 @@ searchMostWantedAnimation5; sleep 0.4; searchMostWantedAnimationEnd;
        
           tput rc
         
-         # clear
-         # afterSignInAnimation;
-          #clear 
-          #accessedMenu; 
-          sleep 10000
+         clear
+          afterSignInAnimation;
+          clear 
+          accessedMenu; 
+         # sleep 10000
           exit 1;
         fi
         let i++
