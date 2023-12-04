@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# rapsh_nfsmw v1.6_beta_(build login3 v2.4) copyright (c) 2019 - 2021, Luis Adha. <adharudin14@gmail>
+# rapsh_nfsmw v1.8 _beta_(build login3 v2.4) copyright (c) 2019 - 2021, Luis Adha. <adharudin14@gmail>
 # USE ONLY TERMINAL EMULATOR FROM JACK PALEVICH TO WORK OR TERMUX
 
 # All Text, character names, places, police organization names are fictional from Need For Speed.
