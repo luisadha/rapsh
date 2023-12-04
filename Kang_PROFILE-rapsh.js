@@ -1,0 +1,1 @@
+{"FIRSTNAME": "Fikri", "LASTNAME": "Sepuh", "ALIAS": "Kang", "COST TO STATE":"  "", "CARS IMPOUNDED":"  "", "CARS MONITORED":"   "", "BOUNTY":"   "", "FINES DUE": "", "PERSUIT_EVADED": "", "BUSTED": ""}

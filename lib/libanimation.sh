@@ -1,6 +1,7 @@
-source ~/rapsh/lib/libcolor-rapsh.sh
-source ~/rapsh/lib/libmain-rapsh.sh
-source ~/rapsh/lib/librand-rapsh.sh
+
+source ./lib/libcolor-rapsh.sh
+source ./lib/libmain-rapsh.sh
+source ./lib/librand-rapsh.sh
 
 searchMostWantedAnimationStart() {
 
@@ -198,11 +199,11 @@ searchMostWantedAnimation5; sleep 0.4; searchMostWantedAnimationEnd;
        
           tput rc
         
-         # clear
-         # afterSignInAnimation;
-          #clear 
-          #accessedMenu; 
-          sleep 10000
+          clear
+          afterSignInAnimation;
+          clear 
+          accessedMenu; 
+          
           exit 1;
         fi
         let i++

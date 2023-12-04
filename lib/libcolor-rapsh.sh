@@ -185,14 +185,14 @@ printf " Enter selection [0-4] > %$((${COLUMNS:-`tput cols`}-25))s\n" ''
 function _menu_theme_dot() {
 
 newLine;                                                   #echo -e "
-colm=$(python3 ~/rapsh/theme/dot_theme.py | column  -ts "+|=" -L | sed "s/ /${THEME_DOT}/g" | sed "s/=/-/g" | wc -L)
+colm=$(python3 ./theme/dot_theme.py | column  -ts "+|=" -L | sed "s/ /${THEME_DOT}/g" | sed "s/=/-/g" | wc -L)
 export COLUMNS=$colm
 echo
 newLine
-python3 ~/rapsh/theme/dangerline_theme.py | column  -ts "+|" -L | sed "s/ /${THEME_DOT}/g" |sed "s/=/-/g" |sed "s/--//g" | sed "s/-//g"
+python3 ./theme/dangerline_theme.py | column  -ts "+|" -L | sed "s/ /${THEME_DOT}/g" |sed "s/=/-/g" |sed "s/--//g" | sed "s/-//g"
 
 newLine
 }
 
 function _menu_theme_dangerline() {
- python3 ~/rapsh/theme/dangerline_theme.py | column  -ts "" | sed "s/+/-/g" | sed "s/=/-/g" | sed "s/|/ /g"; }
+ python3 ./theme/dangerline_theme.py | column  -ts "" | sed "s/+/-/g" | sed "s/=/-/g" | sed "s/|/ /g"; }

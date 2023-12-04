@@ -1,6 +1,4 @@
-#:source ~/rapsh/lib/libanimation.sh
-#source ~/rapsh/lib/librand-rapsh.sh
-source ~/rapsh/lib/libcolor-rapsh.sh
+source ./lib/libcolor-rapsh.sh
 COLOR_BASED="\e[39m"
 COLOR_DANGER="\e[91m"
 COLOR_WARNING="\e[93m"

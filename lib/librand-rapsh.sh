@@ -1,4 +1,4 @@
-source ~/rapsh/lib/libcolor-rapsh.sh
+source ./lib/libcolor-rapsh.sh
 
 
 function thousands() {

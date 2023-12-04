@@ -57,7 +57,7 @@ ${word[22]} ${word[18]}: 1-99
 ${word[1]}: $(generateNonZeroLeading8Digit | thousands)
 ${word[6]} ${word[16]}: $(generateRandomIntegerBut5Digit| thousands)
 ${word[21]} EVADED: 1-999 
-${word[20]}: 0 - 15 " > ~/rapsh/current_alias.data
+${word[20]}: 0 - 15 " > ./current_alias.data
 }
 
 
