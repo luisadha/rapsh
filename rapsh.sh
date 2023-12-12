@@ -82,7 +82,7 @@ function fun_main() {
       read REPLY
       case "$REPLY" in
         0)
-            echo $D; exit 0;;
+            echo $D; return 0;;
         4) 
                                          
             clear
