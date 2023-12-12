@@ -23,7 +23,7 @@ source ./lib/librand-rapsh.sh
 if [ $(tput cols) -lt 70 ] || [ $(tput lines) -lt 13 ]; then
   echo "`basename $0` needs a 70-cols X 13-lines terminal."
   echo "Your terminal is $(tput cols)-cols X $(tput lines)-lines."
-   exit 1
+   return 1
 fi
 # Thanks ideone https://ideone.com/XIo0FC
 function private_init_prompt_aliases() {
