@@ -1,3 +1,8 @@
+
+# ========================= No Longer Supported =========================
+
+### This project has reached the end of development and is no longer supported
+
 6# Rapsh The CLI Game (Under development) v1.2-beta 
 
 ![terminal emulator jackpal](./rapsheet_demo.png)
