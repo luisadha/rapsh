@@ -143,17 +143,15 @@ tput sc
 tput cup 4 30
 
 read sign
-       if [ "$sign" = "CROSS" ];
-       then  #lanjut
-         
-                   pass;
+if [[ "$sign" ==  "$username_valid" ]];
+       then                 pass;
        else
          tput cup 4 30
             echo "Wrong Username";
             sleep 2.0  #kembali
             signin;
             #loncati animasi
-            accessedMenu; #MODE DEVOLOPER
+          #  accessedMenu; #MODE DEVOLOPER
        fi
 }
 
@@ -171,16 +169,15 @@ echo -e "\n"
   # echo -e "                ┃  ${COLOR_WARNING}PASSWORD: ${COLOR_SUCCESS}                ┃"
    #echo -e "                ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${COLOR_BASED}\n"
   tput cup 9 30
-read login
-  case $login in
-                XXXXXXX) #animasi
-
-signInAnimation "SIGNING IN" 15
-            exit 0;;
-        *)
+read -s login
+  if [[ "$login" ==  "$password_valid" ]];
+  then                  signInAnimation "SIGNING IN" 15
+            
+  else
+    
            tput cup 9 30
             echo "Wrong password"
             sleep 2
             signin;
-        esac
+  fi
 }
