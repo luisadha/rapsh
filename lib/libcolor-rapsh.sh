@@ -10,7 +10,7 @@ PV="${e93}PASSWORD:${e92}"
 RAPSH_DIR="$HOME/rapsh/"
 # Reset
 Color_Off='\033[0m'       # Text Reset
-
+teks="Wellcome to Need For Speed : RAPSHEET (emulated)"
 e39="\e[39m"
 e91="\e[91m"
 e93="\e[93m"
@@ -193,6 +193,26 @@ python3 ~/rapsh/theme/dangerline_theme.py | column  -ts "+|" -L | sed "s/ /${THE
 
 newLine
 }
-
+function check_cols() {
+if [ $(tput cols) -lt 70 ] || [ $(tput lines) -lt 13 ]; then
+  echo "`basename $0` needs a 70-cols X 13-lines terminal."
+  echo "Your terminal is $(tput cols)-cols X $(tput lines)-lines."
+   exit 1
+fi
+}
 function _menu_theme_dangerline() {
  python3 ~/rapsh/theme/dangerline_theme.py | column  -ts "" | sed "s/+/-/g" | sed "s/=/-/g" | sed "s/|/ /g"; }
+
+ function Public_Header_Marquee() {
+
+# Waktu jeda antara pengetikan setiap karakter (dalam detik)
+jeda=0.05
+
+# Loop untuk efek animasi mengetik pada teks "Selamat datang di Termux"
+for ((i=0; i<${#teks}; i++)); do
+    # Mencetak satu karakter dari teks
+    echo -n "${teks:$i:1}"
+    # Jeda waktu antara pengetikan karakter
+    sleep $jeda
+done
+ }
